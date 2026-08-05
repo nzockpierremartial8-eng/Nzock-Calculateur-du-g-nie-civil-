@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>CivilPower - Accueil</title>
+</head>
+<body>
+    <h1>Bienvenue, {{ user.nom }}</h1>
+
+    {% if user.est_premium() %}
+        <p style="color:green">Statut : Abonné Premium ✅</p>
+    {% else %}
+        <p style="color:orange">Statut : Compte gratuit</p>
+        <a href="{{ url_for('abonnement_page') }}">Passer Premium</a>
+    {% endif %}
+
+    <ul>
+        <li>Modules gratuits (résistance des matériaux, structures de base...)</li>
+        <li><a href="{{ url_for('module_beton_arme') }}">Béton armé BAEL/Eurocode (Premium)</a></li>
+    </ul>
+
+    <a href="{{ url_for('deconnexion') }}">Se déconnecter</a>
+</body>
+</html>

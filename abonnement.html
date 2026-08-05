@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>CivilPower - Abonnement</title>
+</head>
+<body>
+    <h1>Passer Premium</h1>
+    <p>Accédez à tous les modules : béton armé BAEL/Eurocode, géotechnique avancée, métrés complets...</p>
+
+    <p><strong>5 000 FCFA / mois</strong> (exemple - à ajuster)</p>
+
+    <!-- Un seul bouton : CinetPay propose Mobile Money ET carte bancaire
+         sur sa propre page de paiement (channels="ALL" dans paiement.py) -->
+    <form method="POST" action="{{ url_for('paiement.initier_paiement') }}">
+        <button type="submit">Payer et devenir Premium (5 000 FCFA/mois)</button>
+    </form>
+    <p><small>Tu pourras choisir Mobile Money (Orange/MTN) ou carte bancaire sur la page suivante.</small></p>
+
+    <p><a href="{{ url_for('accueil') }}">Retour</a></p>
+</body>
+</html>
